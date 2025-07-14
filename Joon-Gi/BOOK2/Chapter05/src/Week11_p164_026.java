@@ -52,8 +52,6 @@ public class Week11_p164_026 {
     }
 
     public static void BFS(int v) {
-        if (visited[v]) return;
-
         Queue<Integer> q = new LinkedList<Integer>();
         q.add(v);
         visited[v] = true;
