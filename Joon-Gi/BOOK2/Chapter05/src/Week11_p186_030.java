@@ -11,43 +11,43 @@ public class Week11_p186_030 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
 
-        int N = Integer.parseInt(st.nextToken()); // 레슨 수
-        int M = Integer.parseInt(st.nextToken()); // 블루레이 개수
+        int N = Integer.parseInt(st.nextToken());
+        int M = Integer.parseInt(st.nextToken());
 
         int[] arr = new int[N];
-
         int start = 0, end = 0;
+
         st = new StringTokenizer(br.readLine());
         for (int i = 0; i < N; i++) {
             arr[i] = Integer.parseInt(st.nextToken());
-            if (arr[i] > start) {
-                start = arr[i];
-            }
+            start = Math.max(start, arr[i]);
             end += arr[i];
         }
 
+        int result = end;
+
         while (start <= end) {
-            int mid = start + (end - start) / 2;
+            int mid = (start + end) / 2;
             int sum = 0;
             int count = 1;
 
             for (int i = 0; i < N; i++) {
-                // 만약 현재 레슨 시간 > 중간 인덱스면 새 블루레이 저장 후 sum 리셋
                 if (sum + arr[i] > mid) {
                     count++;
                     sum = arr[i];
                 } else {
                     sum += arr[i];
                 }
+            }
 
-                if (count > M) {
-                    start = mid + 1;
-                } else {
-                    end = mid - 1;
-                }
+            if (count > M) {
+                start = mid + 1;
+            } else {
+                result = mid; // 가능한 값 중 더 작은 값을 저장
+                end = mid - 1;
             }
         }
 
-        System.out.println(start);
+        System.out.println(result);
     }
 }
