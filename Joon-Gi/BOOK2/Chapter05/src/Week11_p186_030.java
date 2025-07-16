@@ -32,9 +32,9 @@ public class Week11_p186_030 {
             int count = 1;
 
             for (int i = 0; i < N; i++) {
+                // 만약 현재 레슨 시간 > 중간 인덱스면 새 블루레이 저장 후 sum 리셋
                 if (sum + arr[i] > mid) {
                     count++;
-
                     sum = arr[i];
                 } else {
                     sum += arr[i];
