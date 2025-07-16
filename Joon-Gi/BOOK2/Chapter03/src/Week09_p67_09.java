@@ -1,3 +1,5 @@
+// 백준 12891
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -37,7 +39,7 @@ public class Week09_p67_09 {
         }
         for (int i = P; i < S; i++) {
             int j = i - P;
-            Add(A[j]);
+            Add(A[i]);
             Remove(A[j]);
             if (checkSecret == 4) {
                 result++;

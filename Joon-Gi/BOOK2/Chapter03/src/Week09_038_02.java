@@ -18,8 +18,8 @@ public class Week09_038_02 {
 
         // 정수의 나눗셈은 소수점 이하가 버려지기 때문에 결과가 다르게 나올 수 있음
         // 형변환을 하거나 곱셈을 먼저 수행
-        avg = sum / max * 100 / N;
-        // avg = (sum / (double) max * 100) / N;
+        // avg = sum / max * 100 / N;
+        avg = (sum / (double) max * 100) / N;
         // avg = (sum * 100 / max) / N;
 
         System.out.println(avg);
