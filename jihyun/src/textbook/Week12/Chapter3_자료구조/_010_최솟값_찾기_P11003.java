@@ -1,4 +1,4 @@
-package textbook.Week10.Chapter3_자료구조;
+package textbook.Week12.Chapter3_자료구조;
 
 import java.util.*;
 import java.io.*;
